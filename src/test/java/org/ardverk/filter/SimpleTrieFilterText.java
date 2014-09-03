@@ -23,7 +23,7 @@ public class SimpleTrieFilterText {
 	public SimpleTrieFilterText() throws Exception {
 		super();
 		this.content = IOUtils.toString(SimpleTrieFilterText.class.getResourceAsStream("War and Peace.txt"), "UTF-8");
-		for (String each : IOUtils.readLines(new FileReader(new File(SimpleTrieFilterText.class.getResource("words.txt").getFile())))) {
+		for (String each : IOUtils.readLines(new FileReader(new File(SimpleTrieFilterText.class.getResource("Words.txt").getFile())))) {
 			this.trie.put(each.trim(), "*");
 		}
 	}

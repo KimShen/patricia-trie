@@ -32,7 +32,7 @@ public class SimpleTrieFilter implements TrieFilter {
 	private int step(StringBuffer buffer, Judgment judgment, int index) {
 		String current = String.valueOf(buffer.charAt(index));
 		if (this.trie.select(current).getKey().startsWith(current)) {
-			for (int step = SimpleTrieFilter.ONE_STEP; step < (buffer.length() - index); step++) {
+			for (int step = SimpleTrieFilter.ONE_STEP; step <= (buffer.length() - index); step++) {
 				String fragement = buffer.substring(index, index + step);
 				judgment.reset(this.trie.select(fragement), fragement);
 				if (judgment.same()) {

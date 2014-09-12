@@ -39,4 +39,14 @@ public class ForkJoinTrieFilterTest {
 		TestCase.assertSame(16, after.filtered());
 		TestCase.assertTrue(after.source().length() < this.content.length());
 	}
+
+	@Test
+	public void testFilterSingleWord() throws Exception {
+		Map<String, String> trie = new HashMap<String, String>();
+		trie.put("亲", "*");
+		trie.put("你", "*");
+		trie.put("你好", "*");
+		TrieCounter after = new ForkJoinTrieFilter(1024, trie).filter("亲爱的你,你好吗");
+		TestCase.assertSame(3, after.filtered());
+	}
 }

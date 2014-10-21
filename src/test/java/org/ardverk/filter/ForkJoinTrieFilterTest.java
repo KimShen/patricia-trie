@@ -22,8 +22,8 @@ public class ForkJoinTrieFilterTest {
 
 	public ForkJoinTrieFilterTest() throws Exception {
 		super();
-		this.content = IOUtils.toString(SimpleTrieFilterText.class.getResourceAsStream("War and Peace.txt"), "UTF-8");
-		for (String each : IOUtils.readLines(new FileReader(new File(SimpleTrieFilterText.class.getResource("Words.txt").getFile())))) {
+		this.content = IOUtils.toString(SimpleTrieFilterTest.class.getResourceAsStream("War and Peace.txt"), "UTF-8");
+		for (String each : IOUtils.readLines(new FileReader(new File(SimpleTrieFilterTest.class.getResource("Words.txt").getFile())))) {
 			this.trie.put(each.trim(), "*");
 		}
 	}

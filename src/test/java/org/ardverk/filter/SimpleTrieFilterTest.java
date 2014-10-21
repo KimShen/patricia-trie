@@ -14,16 +14,16 @@ import org.junit.Test;
 /**
  * @author kim 2014年9月2日
  */
-public class SimpleTrieFilterText {
+public class SimpleTrieFilterTest {
 
 	private final Map<String, String> trie = new HashMap<String, String>();
 
 	private final String content;
 
-	public SimpleTrieFilterText() throws Exception {
+	public SimpleTrieFilterTest() throws Exception {
 		super();
-		this.content = IOUtils.toString(SimpleTrieFilterText.class.getResourceAsStream("War and Peace.txt"), "UTF-8");
-		for (String each : IOUtils.readLines(new FileReader(new File(SimpleTrieFilterText.class.getResource("Words.txt").getFile())))) {
+		this.content = IOUtils.toString(SimpleTrieFilterTest.class.getResourceAsStream("War and Peace.txt"), "UTF-8");
+		for (String each : IOUtils.readLines(new FileReader(new File(SimpleTrieFilterTest.class.getResource("Words.txt").getFile())))) {
 			this.trie.put(each.trim(), "*");
 		}
 	}
